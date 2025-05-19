@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				noxus: {
+					"blue": "#0066FF",
+					"dark-blue": "#001A49",
+					"cyan": "#00FAFF",
+					"light-blue": "#66A3FF",
+					"deep-blue": "#00134D",
 				}
 			},
 			borderRadius: {
@@ -84,12 +92,43 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				"fade-in": {
+					"0%": {
+						opacity: "0",
+						transform: "translateY(10px)"
+					},
+					"100%": {
+						opacity: "1",
+						transform: "translateY(0)"
+					}
+				},
+				"fade-out": {
+					"0%": {
+						opacity: "1",
+						transform: "translateY(0)"
+					},
+					"100%": {
+						opacity: "0",
+						transform: "translateY(10px)"
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				"fade-in": "fade-in 0.6s ease-out",
+				"fade-out": "fade-out 0.6s ease-out",
+			},
+			fontFamily: {
+				montserrat: ["Montserrat", "sans-serif"],
+				spacegrotesk: ["Space Grotesk", "sans-serif"],
+			},
+			backgroundImage: {
+				'hero-gradient': 'linear-gradient(135deg, #001A49 0%, #0066FF 100%)',
+				'card-gradient': 'linear-gradient(135deg, rgba(0, 26, 73, 0.8) 0%, rgba(0, 102, 255, 0.8) 100%)',
+				'button-gradient': 'linear-gradient(90deg, #0066FF 0%, #00FAFF 100%)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
