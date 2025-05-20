@@ -64,11 +64,11 @@ const ResourcesSection: React.FC = () => {
 
   return (
     <>
-      {/* Light background transition effect */}
-      <div className="relative w-full h-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-100"></div>
-        <div className="absolute inset-0 opacity-20 bg-gradient-to-b from-gray-800 to-transparent">
-          {Array.from({ length: 40 }).map((_, i) => (
+      {/* Enhanced gradient transition effect between sections */}
+      <div className="relative w-full h-48 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-100 to-gray-200"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-500/20 to-transparent">
+          {Array.from({ length: 60 }).map((_, i) => (
             <div 
               key={i}
               className="absolute rounded-full bg-noxus-blue"
@@ -84,9 +84,32 @@ const ResourcesSection: React.FC = () => {
             />
           ))}
         </div>
+        
+        {/* Neural network lines for transition */}
+        <div className="absolute inset-0 opacity-20">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="transitionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#3A8DFF" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#00FFF7" stopOpacity="0.4" />
+              </linearGradient>
+            </defs>
+            {Array.from({ length: 10 }).map((_, i) => (
+              <line 
+                key={i}
+                x1={`${Math.random() * 100}%`}
+                y1="0%"
+                x2={`${Math.random() * 100}%`}
+                y2="100%"
+                stroke="url(#transitionGrad)"
+                strokeWidth="1"
+              />
+            ))}
+          </svg>
+        </div>
       </div>
       
-      <section id="setores" className="py-20 relative overflow-hidden bg-gradient-to-b from-gray-100 to-white">
+      <section id="setores" className="py-20 relative overflow-hidden bg-gradient-to-b from-gray-200 to-white">
         {/* Background particle effect */}
         <div className="absolute inset-0 pointer-events-none">
           {Array.from({ length: 80 }).map((_, i) => (
