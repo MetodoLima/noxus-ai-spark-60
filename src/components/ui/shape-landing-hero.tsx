@@ -6,7 +6,7 @@ import { Circle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { GradientButton } from "@/components/ui/gradient-button";
+
 
 function ElegantShape({
     className,
@@ -203,12 +203,19 @@ function HeroGeometric({
                         animate="visible"
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
-                        <GradientButton>
+                        <Button 
+                            size="lg"
+                            className="bg-gradient-to-r from-noxus-blue to-noxus-cyan hover:opacity-90 text-white px-8 py-6 rounded-xl text-lg font-medium"
+                        >
                             Começar Agora
-                        </GradientButton>
-                        <GradientButton variant="variant">
+                        </Button>
+                        <Button 
+                            variant="outline" 
+                            size="lg"
+                            className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/20 px-8 py-6 rounded-xl text-lg font-medium"
+                        >
                             Agendar Demonstração
-                        </GradientButton>
+                        </Button>
                     </motion.div>
                 </div>
             </div>
