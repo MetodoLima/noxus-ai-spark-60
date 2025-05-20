@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GradientButton } from "@/components/ui/gradient-button";
+import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from 'react';
 
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
   return (
     <nav 
       className={`w-full py-3 px-4 md:px-8 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-noxus-dark-blue/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+        scrolled ? 'bg-noxus-dark-blue/90 backdrop-blur-md shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto flex items-center justify-between">
@@ -52,16 +52,18 @@ const Navbar: React.FC = () => {
           <a href="#recursos" className="text-white/80 hover:text-white transition-colors text-sm">Recursos</a>
           <a href="#automacoes" className="text-white/80 hover:text-white transition-colors text-sm">Automações</a>
           <a href="#depoimentos" className="text-white/80 hover:text-white transition-colors text-sm">Depoimentos</a>
-          <GradientButton 
-            className="gradient-button-noxus-secondary text-sm py-2 px-4 min-w-0"
+          <Button 
+            className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-sm"
+            size="sm"
           >
             Login
-          </GradientButton>
-          <GradientButton 
-            className="gradient-button-noxus-primary text-sm py-2 px-4 min-w-0"
+          </Button>
+          <Button 
+            className="bg-gradient-to-r from-noxus-blue to-noxus-cyan text-white hover:opacity-90 text-sm"
+            size="sm"
           >
             Começar Grátis
-          </GradientButton>
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -71,16 +73,18 @@ const Navbar: React.FC = () => {
             <a href="#automacoes" className="text-white/80 hover:text-white transition-colors p-2 text-sm">Automações</a>
             <a href="#depoimentos" className="text-white/80 hover:text-white transition-colors p-2 text-sm">Depoimentos</a>
             <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
-              <GradientButton 
-                className="gradient-button-noxus-secondary text-sm py-2 px-4 w-full"
+              <Button 
+                className="bg-white/10 hover:bg-white/20 text-white text-sm w-full"
+                size="sm"
               >
                 Login
-              </GradientButton>
-              <GradientButton 
-                className="gradient-button-noxus-primary text-sm py-2 px-4 w-full"
+              </Button>
+              <Button 
+                className="bg-gradient-to-r from-noxus-blue to-noxus-cyan text-white hover:opacity-90 w-full text-sm"
+                size="sm"
               >
                 Começar Grátis
-              </GradientButton>
+              </Button>
             </div>
           </div>
         )}

@@ -5,7 +5,7 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Circle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { GradientButton } from "@/components/ui/gradient-button";
+import { Button } from "@/components/ui/button";
 
 
 function ElegantShape({
@@ -203,23 +203,22 @@ function HeroGeometric({
                         animate="visible"
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
-                        <GradientButton 
-                            className="gradient-button-noxus-primary text-lg py-6 px-8 rounded-xl font-medium"
+                        <Button 
+                            size="lg"
+                            className="bg-gradient-to-r from-noxus-blue to-noxus-cyan hover:opacity-90 text-white px-8 py-6 rounded-xl text-lg font-medium"
                         >
                             Começar Agora
-                        </GradientButton>
-                        <GradientButton 
-                            className="gradient-button-noxus-secondary text-lg py-6 px-8 rounded-xl font-medium"
+                        </Button>
+                        <Button 
+                            variant="outline" 
+                            size="lg"
+                            className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-white/20 px-8 py-6 rounded-xl text-lg font-medium"
                         >
                             Agendar Demonstração
-                        </GradientButton>
+                        </Button>
                     </motion.div>
                 </div>
             </div>
-
-            {/* Enhanced gradient at the bottom of the hero section */}
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-noxus-dark-blue via-noxus-dark-blue/80 to-transparent pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-noxus-cyan/30 to-transparent pointer-events-none" />
 
             <div className="absolute inset-0 bg-gradient-to-t from-noxus-dark-blue via-transparent to-transparent pointer-events-none" />
         </div>
