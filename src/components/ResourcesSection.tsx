@@ -64,14 +64,14 @@ const ResourcesSection: React.FC = () => {
 
   return (
     <>
-      {/* Neural network background effect */}
+      {/* Light background transition effect */}
       <div className="relative w-full h-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white to-[#0C1F3F]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-100"></div>
         <div className="absolute inset-0 opacity-20">
           {Array.from({ length: 40 }).map((_, i) => (
             <div 
               key={i}
-              className="absolute rounded-full bg-noxus-cyan"
+              className="absolute rounded-full bg-noxus-blue"
               style={{
                 width: `${Math.random() * 6 + 1}px`,
                 height: `${Math.random() * 6 + 1}px`,
@@ -86,13 +86,13 @@ const ResourcesSection: React.FC = () => {
         </div>
       </div>
       
-      <section id="setores" className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0C1F3F 0%, #1C1C1C 100%)" }}>
+      <section id="setores" className="py-20 relative overflow-hidden bg-gradient-to-b from-gray-100 to-white">
         {/* Background particle effect */}
         <div className="absolute inset-0 pointer-events-none">
           {Array.from({ length: 80 }).map((_, i) => (
             <div 
               key={i}
-              className="absolute rounded-full bg-noxus-cyan"
+              className="absolute rounded-full bg-noxus-blue"
               style={{
                 width: `${Math.random() * 4 + 1}px`,
                 height: `${Math.random() * 4 + 1}px`,
@@ -131,12 +131,12 @@ const ResourcesSection: React.FC = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-noxus-cyan font-medium mb-2 tracking-wider">SETORES DE ATUAÇÃO</h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <h2 className="text-noxus-blue font-medium mb-2 tracking-wider">SETORES DE ATUAÇÃO</h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
               Setores atendidos pela <span className="bg-clip-text text-transparent bg-gradient-to-r from-noxus-blue to-noxus-cyan">NOXUS AI</span> com Agentes Autônomos Inteligentes
             </h3>
             <div className="w-24 h-1 bg-gradient-to-r from-noxus-blue to-noxus-cyan mx-auto mb-6"></div>
-            <p className="text-gray-300 max-w-3xl mx-auto">
+            <p className="text-gray-600 max-w-3xl mx-auto">
               Nossa plataforma de inteligência artificial atende diversos setores com soluções personalizadas para automação e atendimento.
             </p>
           </div>
@@ -149,7 +149,7 @@ const ResourcesSection: React.FC = () => {
                 className="animate-on-scroll"
                 style={{animationDelay: `${index * 0.2}s`}}
               >
-                <Card className={`h-full transition-all duration-500 overflow-hidden relative ${sector.cardClass} backdrop-blur-lg bg-[#1C1C1F]/70 border-[1px] border-opacity-20 ${sector.borderColor} hover:border-opacity-50`}>
+                <Card className={`h-full transition-all duration-500 overflow-hidden relative ${sector.cardClass} bg-white shadow-lg border-[1px] border-opacity-20 ${sector.borderColor} hover:border-opacity-50`}>
                   {/* Glowing effect on hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-r from-noxus-cyan to-noxus-blue blur-xl"></div>
                   
@@ -161,17 +161,17 @@ const ResourcesSection: React.FC = () => {
                         <sector.icon className="text-white w-8 h-8" />
                       </div>
                     </div>
-                    <CardTitle className="text-2xl font-bold text-white">{sector.title}</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-gray-800">{sector.title}</CardTitle>
                   </CardHeader>
                   
                   <CardContent>
-                    <p className="text-gray-300 mb-4">{sector.description}</p>
-                    <p className="text-xs text-gray-400 italic">{sector.idealFor}</p>
+                    <p className="text-gray-600 mb-4">{sector.description}</p>
+                    <p className="text-xs text-gray-500 italic">{sector.idealFor}</p>
                   </CardContent>
                   
                   <CardFooter>
-                    <div className="w-full pt-2 border-t border-gray-700/50">
-                      <span className="text-noxus-cyan text-sm font-medium group-hover:text-noxus-blue transition-colors duration-300">
+                    <div className="w-full pt-2 border-t border-gray-200">
+                      <span className="text-noxus-blue text-sm font-medium group-hover:text-noxus-cyan transition-colors duration-300">
                         Saiba mais →
                       </span>
                     </div>
