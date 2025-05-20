@@ -67,13 +67,14 @@ const ResourcesSection: React.FC = () => {
                 className="animate-on-scroll"
                 style={{animationDelay: `${index * 0.2}s`}}
               >
-                <Card className="h-full glass backdrop-blur-md bg-gradient-to-br from-noxus-dark-blue/5 to-noxus-blue/10 border-noxus-blue/20 shadow-lg hover:shadow-xl transition-all overflow-hidden">
+                <Card className="h-full glass backdrop-blur-lg bg-gradient-to-br from-noxus-dark-blue/20 to-noxus-blue/10 border-noxus-blue/30 shadow-lg hover:shadow-xl transition-all overflow-hidden hover:scale-[1.02]">
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-2xl font-bold text-noxus-dark-blue">{resource.title}</CardTitle>
-                      <div className="text-right">
-                        <span className="text-4xl font-bold text-noxus-blue">{resource.statistic}</span>
-                        <CardDescription className="text-noxus-dark-blue/70">{resource.statLabel}</CardDescription>
+                      <div className="text-right relative">
+                        <span className="text-6xl font-bold text-noxus-blue relative z-10">{resource.statistic}</span>
+                        <div className="absolute -top-3 -right-3 w-24 h-24 bg-noxus-blue/5 rounded-full blur-xl"></div>
+                        <CardDescription className="text-noxus-dark-blue/70 text-lg">{resource.statLabel}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
@@ -86,6 +87,34 @@ const ResourcesSection: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Dark tech-themed gradient for bottom section */}
+      <div className="w-full h-32 bg-gradient-to-b from-white to-noxus-dark-blue" />
+      <div className="bg-noxus-dark-blue">
+        <div className="container mx-auto px-4 py-8 relative overflow-hidden">
+          {/* Tech background elements */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-5">
+            <div className="absolute top-10 left-10 w-40 h-40 rounded-full border border-noxus-cyan"></div>
+            <div className="absolute bottom-20 right-20 w-60 h-60 rounded-full border border-noxus-light-blue"></div>
+            <div className="absolute top-40 right-40 w-20 h-20 rounded-full bg-noxus-blue/10"></div>
+            <div className="absolute grid grid-cols-10 gap-5 w-full h-full">
+              {Array(50).fill(0).map((_, i) => (
+                <div 
+                  key={i} 
+                  className="w-1 h-1 bg-noxus-light-blue/20 rounded-full" 
+                  style={{
+                    position: 'absolute',
+                    top: `${Math.random() * 100}%`,
+                    left: `${Math.random() * 100}%`
+                  }}
+                ></div>
+              ))}
+            </div>
+          </div>
+
+          <div className="h-32"></div>
+        </div>
+      </div>
     </>
   );
 };
