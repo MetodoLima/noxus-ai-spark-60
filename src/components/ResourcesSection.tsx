@@ -67,7 +67,7 @@ const ResourcesSection: React.FC = () => {
       {/* Light background transition effect */}
       <div className="relative w-full h-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-100"></div>
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 bg-gradient-to-b from-gray-800 to-transparent">
           {Array.from({ length: 40 }).map((_, i) => (
             <div 
               key={i}
