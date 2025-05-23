@@ -1,11 +1,9 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ResourcesSection from '@/components/ResourcesSection';
 import AutomationsSection from '@/components/AutomationsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactSection from '@/components/ContactSection';
+import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 
 const Index: React.FC = () => {
@@ -63,8 +61,7 @@ const Index: React.FC = () => {
       <HeroSection />
       <ResourcesSection />
       <AutomationsSection />
-      <TestimonialsSection />
-      <ContactSection />
+      <CTASection />
       <Footer />
     </main>
   );
