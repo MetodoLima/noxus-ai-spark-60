@@ -60,7 +60,7 @@ const AutomationsSection: React.FC = () => {
         </div>
         
         {/* Partículas conectoras */}
-        <div className="absolute inset-0 bg-slate-300">
+        <div className="absolute inset-0 bg-gradient-to-b from-white to-[#0C1F3F]">
           {Array.from({
           length: 12
         }).map((_, i) => <div key={i} className="absolute rounded-full bg-[#3A8DFF] animate-pulse" style={{
