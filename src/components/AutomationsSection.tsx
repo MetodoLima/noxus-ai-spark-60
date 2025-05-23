@@ -174,7 +174,7 @@ const AutomationsSection: React.FC = () => {
         </div>
         
         {/* Partículas conectoras */}
-        <div className="absolute inset-0 bg-gray-900">
+        <div className="absolute inset-0 bg-slate-900">
           {Array.from({
           length: 12
         }).map((_, i) => <div key={i} className="absolute rounded-full bg-[#00FFF7] animate-pulse" style={{
