@@ -56,108 +56,49 @@ const AutomationsSection: React.FC = () => {
 
   return (
     <>
-      {/* Transição superior aprimorada - conecta perfeitamente com a seção de cima */}
-      <div className="relative w-full h-32 sm:h-40 lg:h-48 overflow-hidden">
-        {/* Gradiente fluido de integração */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: `
-              linear-gradient(to bottom, 
-                white 0%, 
-                rgba(255,255,255,0.95) 15%,
-                rgba(200,200,200,0.8) 30%,
-                rgba(150,150,150,0.6) 45%,
-                rgba(100,100,100,0.4) 60%,
-                rgba(50,50,50,0.3) 75%,
-                rgba(12,31,63,0.5) 85%,
-                #0C1F3F 100%
-              )
-            `
-          }}
-        />
-        
-        {/* Luzes fluidas conectoras */}
-        <div className="absolute inset-0">
-          {/* Linha principal de integração */}
-          <div 
-            className="absolute w-full h-1 opacity-60"
-            style={{
-              top: '25%',
-              background: 'linear-gradient(90deg, transparent 0%, #3A8DFF 20%, #00FFF7 50%, #3A8DFF 80%, transparent 100%)',
-              filter: 'blur(2px)'
-            }}
-          />
-          <div 
-            className="absolute w-full h-1 opacity-40"
-            style={{
-              top: '50%',
-              background: 'linear-gradient(90deg, transparent 0%, #00FFF7 30%, #3A8DFF 70%, transparent 100%)',
-              filter: 'blur(3px)'
-            }}
-          />
-          <div 
-            className="absolute w-full h-1 opacity-80"
-            style={{
-              top: '75%',
-              background: 'linear-gradient(90deg, transparent 0%, #3A8DFF 40%, #00FFF7 60%, transparent 100%)',
-              filter: 'blur(1px)'
-            }}
-          />
+      {/* Transição superior - conecta com a seção acima */}
+      <div className="relative w-full h-16 sm:h-20 lg:h-24 overflow-hidden bg-gradient-to-b from-white to-[#0C1F3F]/20">
+        <div className="absolute inset-0 opacity-30">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="topTransition" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#3A8DFF" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#00FFF7" stopOpacity="0.4" />
+              </linearGradient>
+            </defs>
+            {Array.from({ length: 6 }).map((_, i) => (
+              <line 
+                key={i}
+                x1={`${i * 20}%`}
+                y1="0%"
+                x2={`${(i * 20) + 15}%`}
+                y2="100%"
+                stroke="url(#topTransition)"
+                strokeWidth="1"
+                opacity="0.6"
+              />
+            ))}
+          </svg>
         </div>
         
-        {/* Partículas flutuantes de conexão */}
+        {/* Partículas conectoras */}
         <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
+          {Array.from({ length: 12 }).map((_, i) => (
             <div 
               key={i}
-              className="absolute rounded-full animate-pulse"
+              className="absolute rounded-full bg-[#3A8DFF] animate-pulse"
               style={{
-                width: `${Math.random() * 3 + 1}px`,
-                height: `${Math.random() * 3 + 1}px`,
+                width: `${Math.random() * 2 + 1}px`,
+                height: `${Math.random() * 2 + 1}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                background: i % 2 === 0 ? '#3A8DFF' : '#00FFF7',
-                animationDelay: `${Math.random() * 3}s`,
+                animationDelay: `${Math.random() * 2}s`,
                 animationDuration: `${Math.random() * 2 + 1}s`,
-                opacity: 0.6
+                opacity: 0.4
               }}
             />
           ))}
         </div>
-        
-        {/* Ondas de integração */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="integrationGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(255,255,255,0.3)" />
-              <stop offset="30%" stopColor="rgba(58,141,255,0.4)" />
-              <stop offset="70%" stopColor="rgba(0,255,247,0.4)" />
-              <stop offset="100%" stopColor="rgba(12,31,63,0.3)" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M 0 20 Q 25 15 50 25 T 100 20"
-            stroke="url(#integrationGrad)"
-            strokeWidth="0.8"
-            fill="none"
-            opacity="0.7"
-          />
-          <path
-            d="M 0 40 Q 30 35 60 45 T 100 40"
-            stroke="url(#integrationGrad)"
-            strokeWidth="0.6"
-            fill="none"
-            opacity="0.5"
-          />
-          <path
-            d="M 0 70 Q 40 65 70 75 T 100 70"
-            stroke="url(#integrationGrad)"
-            strokeWidth="1"
-            fill="none"
-            opacity="0.8"
-          />
-        </svg>
       </div>
 
       <section id="automacoes" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[#0C1F3F] to-[#1C1C1C] relative overflow-hidden">
@@ -265,108 +206,52 @@ const AutomationsSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Transição inferior aprimorada - conecta perfeitamente com a seção de baixo */}
-      <div className="relative w-full h-32 sm:h-40 lg:h-48 overflow-hidden">
-        {/* Gradiente fluido de integração */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: `
-              linear-gradient(to bottom, 
-                #1C1C1C 0%, 
-                rgba(28,28,28,0.9) 15%,
-                rgba(50,50,50,0.7) 30%,
-                rgba(100,100,100,0.5) 45%,
-                rgba(150,150,150,0.4) 60%,
-                rgba(200,200,200,0.3) 75%,
-                rgba(255,255,255,0.2) 85%,
-                white 100%
-              )
-            `
-          }}
-        />
-        
-        {/* Luzes fluidas conectoras */}
-        <div className="absolute inset-0">
-          {/* Linha principal de integração */}
-          <div 
-            className="absolute w-full h-1 opacity-80"
-            style={{
-              top: '25%',
-              background: 'linear-gradient(90deg, transparent 0%, #00FFF7 20%, #3A8DFF 50%, #00FFF7 80%, transparent 100%)',
-              filter: 'blur(1px)'
-            }}
-          />
-          <div 
-            className="absolute w-full h-1 opacity-40"
-            style={{
-              top: '50%',
-              background: 'linear-gradient(90deg, transparent 0%, #3A8DFF 30%, #00FFF7 70%, transparent 100%)',
-              filter: 'blur(3px)'
-            }}
-          />
-          <div 
-            className="absolute w-full h-1 opacity-60"
-            style={{
-              top: '75%',
-              background: 'linear-gradient(90deg, transparent 0%, #00FFF7 40%, #3A8DFF 60%, transparent 100%)',
-              filter: 'blur(2px)'
-            }}
-          />
+      {/* Transição inferior - conecta com a seção abaixo */}
+      <div className="relative w-full h-16 sm:h-20 lg:h-24 overflow-hidden bg-gradient-to-b from-[#1C1C1C] to-white">
+        <div className="absolute inset-0 opacity-30">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bottomTransition" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#00FFF7" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#3A8DFF" stopOpacity="0.2" />
+              </linearGradient>
+            </defs>
+            {Array.from({ length: 6 }).map((_, i) => (
+              <line 
+                key={i}
+                x1={`${i * 20}%`}
+                y1="0%"
+                x2={`${(i * 20) + 15}%`}
+                y2="100%"
+                stroke="url(#bottomTransition)"
+                strokeWidth="1"
+                opacity="0.6"
+              />
+            ))}
+          </svg>
         </div>
         
-        {/* Partículas flutuantes de conexão */}
+        {/* Partículas conectoras */}
         <div className="absolute inset-0">
-          {Array.from({ length: 20 }).map((_, i) => (
+          {Array.from({ length: 12 }).map((_, i) => (
             <div 
               key={i}
-              className="absolute rounded-full animate-pulse"
+              className="absolute rounded-full bg-[#00FFF7] animate-pulse"
               style={{
-                width: `${Math.random() * 3 + 1}px`,
-                height: `${Math.random() * 3 + 1}px`,
+                width: `${Math.random() * 2 + 1}px`,
+                height: `${Math.random() * 2 + 1}px`,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                background: i % 2 === 0 ? '#00FFF7' : '#3A8DFF',
-                animationDelay: `${Math.random() * 3}s`,
+                animationDelay: `${Math.random() * 2}s`,
                 animationDuration: `${Math.random() * 2 + 1}s`,
-                opacity: 0.5
+                opacity: 0.4
               }}
             />
           ))}
         </div>
-        
-        {/* Ondas de integração */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="bottomIntegrationGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(28,28,28,0.3)" />
-              <stop offset="30%" stopColor="rgba(0,255,247,0.4)" />
-              <stop offset="70%" stopColor="rgba(58,141,255,0.4)" />
-              <stop offset="100%" stopColor="rgba(255,255,255,0.3)" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M 0 30 Q 25 25 50 35 T 100 30"
-            stroke="url(#bottomIntegrationGrad)"
-            strokeWidth="1"
-            fill="none"
-            opacity="0.8"
-          />
-          <path
-            d="M 0 50 Q 30 45 60 55 T 100 50"
-            stroke="url(#bottomIntegrationGrad)"
-            strokeWidth="0.6"
-            fill="none"
-            opacity="0.5"
-          />
-          <path
-            d="M 0 80 Q 40 75 70 85 T 100 80"
-            stroke="url(#bottomIntegrationGrad)"
-            strokeWidth="0.8"
-            fill="none"
-            opacity="0.7"
-          />
-        </svg>
+
+        {/* Ondas de conexão */}
+        <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-[#3A8DFF]/20 to-transparent"></div>
       </div>
     </>
   );
