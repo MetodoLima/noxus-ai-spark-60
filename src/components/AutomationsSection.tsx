@@ -1,7 +1,9 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, Calendar, ShoppingCart } from "lucide-react";
+import InsightsSection from './InsightsSection';
 
 const AutomationsSection: React.FC = () => {
   const automationRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -196,7 +198,10 @@ const AutomationsSection: React.FC = () => {
         </div>
       </section>
 
-      <div className="relative w-full h-16 sm:h-20 lg:h-24 overflow-hidden bg-gradient-to-b from-[#1C1C1C] to-white">
+      {/* Seção de Insights */}
+      <InsightsSection />
+
+      <div className="relative w-full h-16 sm:h-20 lg:h-24 overflow-hidden bg-gradient-to-b from-slate-800 to-white">
         <div className="absolute inset-0 opacity-30">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -212,7 +217,7 @@ const AutomationsSection: React.FC = () => {
         </div>
         
         {/* Partículas conectoras */}
-        <div className="absolute inset-0 bg-slate-900">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-white">
           {Array.from({
           length: 12
         }).map((_, i) => <div key={i} className="absolute rounded-full bg-[#00FFF7] animate-pulse" style={{
