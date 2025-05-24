@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { TrendingUp, Users, Clock, Zap, BarChart3, MessageCircle } from "lucide-react";
+import { TrendingUp, Clock, Zap } from "lucide-react";
 
 const InsightsSection: React.FC = () => {
   const insightRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -36,12 +35,6 @@ const InsightsSection: React.FC = () => {
       description: "Empresas que adotaram IA viram crescimento exponencial"
     },
     {
-      icon: Users,
-      value: "24/7",
-      label: "Atendimento Contínuo",
-      description: "Suporte disponível todos os dias, sem pausas"
-    },
-    {
       icon: Clock,
       value: "85%",
       label: "Redução no Tempo",
@@ -52,18 +45,6 @@ const InsightsSection: React.FC = () => {
       value: "95%",
       label: "Satisfação do Cliente",
       description: "Clientes mais satisfeitos com respostas rápidas"
-    },
-    {
-      icon: BarChart3,
-      value: "60%",
-      label: "Aumento nas Vendas",
-      description: "Conversões melhoram com atendimento inteligente"
-    },
-    {
-      icon: MessageCircle,
-      value: "10k+",
-      label: "Conversas Simultâneas",
-      description: "Capacidade de atender milhares ao mesmo tempo"
     }
   ];
 
@@ -125,34 +106,36 @@ const InsightsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 max-w-5xl mx-auto">
           {insights.map((insight, index) => (
-            <Card 
+            <div 
               key={index}
               ref={el => insightRefs.current[index] = el}
-              className="bg-gradient-to-br from-[#0C1F3F]/60 to-[#1C1C1C]/60 border border-[#3A8DFF]/20 backdrop-blur-sm animate-on-scroll hover:shadow-2xl hover:shadow-[#00FFF7]/20 transition-all duration-300 group"
+              className="text-center animate-on-scroll group"
               style={{
-                animationDelay: `${index * 0.15}s`
+                animationDelay: `${index * 0.2}s`
               }}
             >
-              <CardContent className="p-6 lg:p-8 text-center">
-                <div className="inline-flex items-center justify-center p-3 rounded-xl bg-gradient-to-br from-[#3A8DFF]/20 to-[#00FFF7]/20 border border-[#3A8DFF]/30 backdrop-blur-sm mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <insight.icon className="h-6 w-6 text-[#3A8DFF]" />
-                </div>
-                
-                <div className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#3A8DFF] to-[#00FFF7] bg-clip-text text-transparent mb-2">
-                  {insight.value}
-                </div>
-                
-                <h4 className="text-lg font-semibold text-white mb-3">
-                  {insight.label}
-                </h4>
-                
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {insight.description}
-                </p>
-              </CardContent>
-            </Card>
+              {/* Ícone */}
+              <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-gradient-to-br from-[#3A8DFF]/20 to-[#00FFF7]/20 border border-[#3A8DFF]/30 backdrop-blur-sm mb-6 group-hover:scale-110 transition-transform duration-300">
+                <insight.icon className="h-8 w-8 text-[#3A8DFF]" />
+              </div>
+              
+              {/* Número grande destacado */}
+              <div className="text-7xl lg:text-8xl font-bold bg-gradient-to-r from-[#3A8DFF] to-[#00FFF7] bg-clip-text text-transparent mb-4 leading-none">
+                {insight.value}
+              </div>
+              
+              {/* Label */}
+              <h4 className="text-xl lg:text-2xl font-semibold text-white mb-4">
+                {insight.label}
+              </h4>
+              
+              {/* Descrição */}
+              <p className="text-gray-400 text-base leading-relaxed max-w-xs mx-auto">
+                {insight.description}
+              </p>
+            </div>
           ))}
         </div>
 
