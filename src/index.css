@@ -102,3 +102,19 @@
     transform: translateY(0) translateX(0);
   }
 }
+
+/* Animação para luzes horizontais fluidas */
+@keyframes horizontalFlow {
+  0% {
+    transform: translateX(-20%) scaleX(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(20%) scaleX(0.8);
+    opacity: 0.3;
+  }
+}

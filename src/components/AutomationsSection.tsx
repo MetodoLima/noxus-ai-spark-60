@@ -86,134 +86,59 @@ const AutomationsSection: React.FC = () => {
       </div>
 
       <section id="automacoes" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[#0C1F3F] to-[#1C1C1C] relative overflow-hidden">
-        {/* Enhanced Technological Background with Unique Lights and Contours */}
+        {/* Fundo tecnológico com luzes horizontais fluidas */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Flowing technological light streams */}
+          {/* Primeira luz horizontal fluida */}
+          <div 
+            className="absolute w-full h-2 top-1/3 opacity-60"
+            style={{
+              background: 'linear-gradient(90deg, transparent 0%, rgba(58, 141, 255, 0.3) 20%, rgba(0, 255, 247, 0.6) 50%, rgba(58, 141, 255, 0.3) 80%, transparent 100%)',
+              boxShadow: '0 0 30px rgba(58, 141, 255, 0.4), 0 0 60px rgba(0, 255, 247, 0.3)',
+              filter: 'blur(1px)',
+              animation: 'horizontalFlow 12s ease-in-out infinite'
+            }}
+          />
+          
+          {/* Segunda luz horizontal fluida */}
+          <div 
+            className="absolute w-full h-1.5 top-2/3 opacity-40"
+            style={{
+              background: 'linear-gradient(90deg, transparent 0%, rgba(0, 255, 247, 0.4) 30%, rgba(58, 141, 255, 0.7) 50%, rgba(0, 255, 247, 0.4) 70%, transparent 100%)',
+              boxShadow: '0 0 25px rgba(0, 255, 247, 0.5), 0 0 50px rgba(58, 141, 255, 0.2)',
+              filter: 'blur(0.5px)',
+              animation: 'horizontalFlow 15s ease-in-out infinite reverse'
+            }}
+          />
+
+          {/* Partículas flutuantes */}
           <div className="absolute inset-0">
-            {/* Primary light stream - horizontal flow */}
-            <div 
-              className="absolute w-full h-1 top-1/4 opacity-60"
-              style={{
-                background: 'linear-gradient(90deg, transparent 0%, #3A8DFF 25%, #00FFF7 50%, #3A8DFF 75%, transparent 100%)',
-                boxShadow: '0 0 20px #3A8DFF, 0 0 40px #00FFF7',
-                animation: 'float 8s ease-in-out infinite'
-              }}
-            />
-            
-            {/* Secondary light stream - diagonal flow */}
-            <div 
-              className="absolute w-full h-0.5 top-3/4 opacity-40 transform -rotate-12"
-              style={{
-                background: 'linear-gradient(90deg, transparent 0%, #00FFF7 30%, #3A8DFF 70%, transparent 100%)',
-                boxShadow: '0 0 15px #00FFF7, 0 0 30px #3A8DFF',
-                animation: 'float 12s ease-in-out infinite reverse'
-              }}
-            />
-
-            {/* Vertical light beams */}
-            <div 
-              className="absolute left-1/4 top-0 w-0.5 h-full opacity-30"
-              style={{
-                background: 'linear-gradient(180deg, transparent 0%, #3A8DFF 20%, #00FFF7 50%, #3A8DFF 80%, transparent 100%)',
-                boxShadow: '0 0 10px #3A8DFF',
-                animation: 'pulse 6s ease-in-out infinite'
-              }}
-            />
-            
-            <div 
-              className="absolute right-1/3 top-0 w-0.5 h-full opacity-25"
-              style={{
-                background: 'linear-gradient(180deg, transparent 0%, #00FFF7 30%, #3A8DFF 70%, transparent 100%)',
-                boxShadow: '0 0 8px #00FFF7',
-                animation: 'pulse 8s ease-in-out infinite'
-              }}
-            />
-          </div>
-
-          {/* Technological circuit-like contours */}
-          <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3A8DFF" stopOpacity="0.8" />
-                <stop offset="50%" stopColor="#00FFF7" stopOpacity="1" />
-                <stop offset="100%" stopColor="#3A8DFF" stopOpacity="0.6" />
-              </linearGradient>
-              <filter id="circuitGlow">
-                <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
-                <feMerge> 
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            
-            {/* Circuit-like paths */}
-            <path
-              d="M 10 20 L 30 20 L 30 40 L 60 40 L 60 15 L 90 15"
-              stroke="url(#circuitGradient)"
-              strokeWidth="0.3"
-              fill="none"
-              filter="url(#circuitGlow)"
-            />
-            <path
-              d="M 5 60 L 25 60 L 25 80 L 55 80 L 55 55 L 85 55"
-              stroke="url(#circuitGradient)"
-              strokeWidth="0.2"
-              fill="none"
-              filter="url(#circuitGlow)"
-            />
-            <path
-              d="M 15 75 L 35 75 L 35 30 L 70 30 L 70 85 L 95 85"
-              stroke="url(#circuitGradient)"
-              strokeWidth="0.25"
-              fill="none"
-              filter="url(#circuitGlow)"
-            />
-            
-            {/* Circuit nodes */}
-            <circle cx="30" cy="20" r="0.8" fill="#3A8DFF" opacity="0.8">
-              <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="60" cy="40" r="0.6" fill="#00FFF7" opacity="0.6">
-              <animate attributeName="opacity" values="0.3;0.9;0.3" dur="4s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="25" cy="60" r="0.7" fill="#3A8DFF" opacity="0.7">
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="5s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="70" cy="30" r="0.5" fill="#00FFF7" opacity="0.5">
-              <animate attributeName="opacity" values="0.2;0.8;0.2" dur="6s" repeatCount="indefinite"/>
-            </circle>
-          </svg>
-
-          {/* Enhanced flowing particles */}
-          <div className="absolute inset-0">
-            {Array.from({ length: 30 }).map((_, i) => (
+            {Array.from({ length: 20 }).map((_, i) => (
               <div 
                 key={i}
                 className="absolute rounded-full bg-gradient-to-r from-[#3A8DFF]/20 to-[#00FFF7]/30"
                 style={{
-                  width: `${Math.random() * 4 + 2}px`,
-                  height: `${Math.random() * 4 + 2}px`,
+                  width: `${Math.random() * 3 + 1}px`,
+                  height: `${Math.random() * 3 + 1}px`,
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  boxShadow: `0 0 ${Math.random() * 10 + 5}px rgba(58, 141, 255, 0.3)`,
-                  animation: `float ${Math.random() * 15 + 10}s linear infinite`,
-                  animationDelay: `${Math.random() * 5}s`
+                  boxShadow: `0 0 ${Math.random() * 8 + 4}px rgba(58, 141, 255, 0.3)`,
+                  animation: `float ${Math.random() * 10 + 8}s linear infinite`,
+                  animationDelay: `${Math.random() * 3}s`
                 }}
               />
             ))}
           </div>
 
-          {/* Technological grid overlay */}
-          <div className="absolute inset-0 opacity-5">
+          {/* Grid tecnológico sutil */}
+          <div className="absolute inset-0 opacity-3">
             <div 
               className="w-full h-full"
               style={{
                 backgroundImage: `
-                  linear-gradient(rgba(58, 141, 255, 0.3) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(58, 141, 255, 0.3) 1px, transparent 1px)
+                  linear-gradient(rgba(58, 141, 255, 0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(58, 141, 255, 0.1) 1px, transparent 1px)
                 `,
-                backgroundSize: '50px 50px'
+                backgroundSize: '60px 60px'
               }}
             />
           </div>
@@ -271,7 +196,6 @@ const AutomationsSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Transição inferior - conecta com a seção abaixo */}
       <div className="relative w-full h-16 sm:h-20 lg:h-24 overflow-hidden bg-gradient-to-b from-[#1C1C1C] to-white">
         <div className="absolute inset-0 opacity-30">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
