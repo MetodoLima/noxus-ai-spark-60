@@ -172,11 +172,11 @@ const ResourcesSection: React.FC = () => {
                 className="animate-on-scroll"
                 style={{animationDelay: `${index * 0.2}s`}}
               >
-                <Card className={`h-full transition-all duration-500 overflow-hidden relative ${sector.cardClass} bg-white shadow-lg border-[1px] border-opacity-20 ${sector.borderColor} hover:border-opacity-50`}>
+                <Card className={`h-full transition-all duration-500 overflow-hidden relative ${sector.cardClass} bg-white shadow-lg border border-gray-200 hover:shadow-xl hover:border-noxus-blue/30`}>
                   {/* Glowing effect on hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700 bg-gradient-to-r from-noxus-cyan to-noxus-blue blur-xl"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-700 bg-gradient-to-r from-noxus-cyan to-noxus-blue"></div>
                   
-                  <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-gradient-to-br opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-700" style={{background: `linear-gradient(135deg, ${sector.color}, transparent)`}}></div>
+                  <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-gradient-to-br opacity-10 blur-2xl group-hover:opacity-20 transition-opacity duration-700" style={{background: `linear-gradient(135deg, ${sector.color}, transparent)`}}></div>
                   
                   <CardHeader>
                     <div className="flex items-center justify-between">
