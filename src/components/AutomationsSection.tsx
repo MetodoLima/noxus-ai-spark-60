@@ -112,46 +112,46 @@ const AutomationsSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {automations.map((automation, index) => 
               <Card 
                 key={index} 
                 ref={el => automationRefs.current[index] = el} 
-                className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll" 
+                className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll" 
                 style={{
                   animationDelay: `${index * 0.2}s`
                 }}
               >
-                <CardContent className="p-4 sm:p-6 lg:p-8">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
-                    {/* Conteúdo de texto */}
-                    <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
-                      <div className="inline-flex items-center justify-center p-2 sm:p-3 rounded-xl bg-[#3A8DFF]/10 border border-[#3A8DFF]/20 w-fit">
-                        <automation.icon className="h-5 w-5 sm:h-6 sm:w-6 text-[#3A8DFF]" />
-                      </div>
-                      
-                      <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 leading-tight">
-                        {automation.title}
-                      </h4>
-                      
-                      <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                        {automation.description}
-                      </p>
-                      
-                      <Button className="bg-[#3A8DFF] hover:bg-[#2E75E6] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-xl text-base sm:text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
-                        {automation.buttonText}
-                      </Button>
-                    </div>
-                    
+                <CardContent className="p-4 sm:p-6">
+                  <div className="space-y-4">
                     {/* Imagem */}
-                    <div className="relative order-1 lg:order-2">
-                      <div className="rounded-2xl overflow-hidden shadow-lg">
+                    <div className="relative">
+                      <div className="rounded-lg overflow-hidden">
                         <img 
                           src={automation.image} 
                           alt={automation.title} 
-                          className="w-full h-48 sm:h-56 md:h-64 lg:h-80 object-cover transition-transform duration-300 hover:scale-105" 
+                          className="w-full h-48 object-cover" 
                         />
                       </div>
+                    </div>
+                    
+                    {/* Conteúdo de texto */}
+                    <div className="space-y-3">
+                      <div className="inline-flex items-center justify-center p-2 rounded-lg bg-[#3A8DFF]/10 w-fit">
+                        <automation.icon className="h-5 w-5 text-[#3A8DFF]" />
+                      </div>
+                      
+                      <h4 className="text-lg font-bold text-gray-800">
+                        {automation.title}
+                      </h4>
+                      
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {automation.description}
+                      </p>
+                      
+                      <Button className="bg-[#3A8DFF] hover:bg-[#2E75E6] text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 w-full">
+                        {automation.buttonText}
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
