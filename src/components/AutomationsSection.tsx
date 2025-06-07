@@ -1,9 +1,9 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, Calendar, ShoppingCart } from "lucide-react";
 import InsightsSection from './InsightsSection';
+import WhatsAppFeaturesSection from './WhatsAppFeaturesSection';
 
 const AutomationsSection: React.FC = () => {
   const automationRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -160,6 +160,9 @@ const AutomationsSection: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Nova seção WhatsApp */}
+      <WhatsAppFeaturesSection />
 
       {/* Seção de Insights */}
       <InsightsSection />
