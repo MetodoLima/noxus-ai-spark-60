@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, MessageCircle, Calendar, CheckCircle, Users, Bell } from "lucide-react";
+import { Clock, MessageCircle, Calendar, Bell } from "lucide-react";
 
 const WhatsAppFeaturesSection: React.FC = () => {
   const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -30,34 +30,24 @@ const WhatsAppFeaturesSection: React.FC = () => {
 
   const features = [
     {
-      title: "Agendamento Inteligente",
-      description: "A IA analisa sua agenda e sugere os melhores horários disponíveis",
+      title: "Agendamento Automático",
+      description: "A IA automatiza todo o processo de agendamento, identificando horários disponíveis e confirmando compromissos instantaneamente",
       icon: Calendar,
     },
     {
-      title: "Confirmação Automática",
-      description: "Envia lembretes e confirma agendamentos automaticamente",
-      icon: CheckCircle,
+      title: "Consulta de Serviços",
+      description: "Responde dúvidas sobre serviços oferecidos, preços e informações gerais de forma natural e conversacional",
+      icon: MessageCircle,
     },
     {
-      title: "Atendimento 24/7",
-      description: "Responde consultas e agenda compromissos a qualquer hora",
+      title: "Horários Disponíveis",
+      description: "Consulta em tempo real a agenda e apresenta opções de horários livres de forma organizada e clara",
       icon: Clock,
     },
     {
-      title: "Gestão de Clientes",
-      description: "Organiza informações e histórico de cada cliente",
-      icon: Users,
-    },
-    {
-      title: "Notificações Inteligentes",
-      description: "Avisos automáticos sobre cancelamentos e reagendamentos",
+      title: "Lembretes Automáticos",
+      description: "Envia notificações e lembretes automáticos sobre consultas, evitando faltas e melhorando a organização",
       icon: Bell,
-    },
-    {
-      title: "Chat Personalizado",
-      description: "Conversa natural adaptada ao seu tipo de negócio",
-      icon: MessageCircle,
     }
   ];
 
@@ -130,23 +120,23 @@ const WhatsAppFeaturesSection: React.FC = () => {
               <Card 
                 key={index}
                 ref={el => featureRefs.current[index] = el}
-                className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll"
+                className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll border-0"
                 style={{
                   animationDelay: `${index * 0.1}s`
                 }}
               >
-                <CardContent className="p-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0">
-                      <div className="inline-flex items-center justify-center p-2 rounded-lg bg-[#3A8DFF]/10">
+                <CardContent className="p-5">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="inline-flex items-center justify-center p-2.5 rounded-lg bg-[#3A8DFF]/10">
                         <feature.icon className="h-5 w-5 text-[#3A8DFF]" />
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-sm font-semibold text-gray-800 mb-1">
+                      <h4 className="text-base font-semibold text-[#3A8DFF] mb-2 leading-tight">
                         {feature.title}
                       </h4>
-                      <p className="text-xs text-gray-600 leading-relaxed">
+                      <p className="text-sm text-gray-600 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
