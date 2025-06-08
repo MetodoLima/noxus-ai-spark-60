@@ -1,7 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Heart, ShoppingCart, Home } from "lucide-react";
+import { Apple, ShoppingCart, Home } from "lucide-react";
 
 const ResourcesSection: React.FC = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -34,7 +33,7 @@ const ResourcesSection: React.FC = () => {
       title: "Saúde e Bem-estar",
       description: "Automatize agendamentos, lembretes e pré-atendimentos com nossos agentes de IA.",
       idealFor: "Ideal para: nutricionistas, dentistas, médicos, psicólogos, esteticistas e clínicas.",
-      icon: Heart,
+      icon: Apple,
       color: "bg-purple-500",
       borderColor: "border-purple-400",
       highlightColor: "from-purple-400 to-purple-700",
