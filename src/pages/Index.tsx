@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ResourcesSection from '@/components/ResourcesSection';
+import PainPointsSection from '@/components/PainPointsSection';
 import AutomationsSection from '@/components/AutomationsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
@@ -61,6 +62,7 @@ const Index: React.FC = () => {
       <Navbar />
       <HeroSection />
       <ResourcesSection />
+      <PainPointsSection />
       <AutomationsSection />
       <TestimonialsSection />
       <CTASection />
