@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Apple, ShoppingCart, Home } from "lucide-react";
+import { Apple, Smile, Scale } from "lucide-react";
 
 const ResourcesSection: React.FC = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -30,9 +30,9 @@ const ResourcesSection: React.FC = () => {
 
   const sectors = [
     {
-      title: "Saúde e Bem-estar",
-      description: "Automatize agendamentos, lembretes e pré-atendimentos com nossos agentes de IA.",
-      idealFor: "Ideal para: nutricionistas, dentistas, médicos, psicólogos, esteticistas e clínicas.",
+      title: "Nutrição",
+      description: "Automatize agendamentos de consultas nutricionais, lembretes de dietas e acompanhamento de pacientes.",
+      idealFor: "Ideal para: nutricionistas, consultórios de nutrição e clínicas de emagrecimento.",
       icon: Apple,
       color: "bg-purple-500",
       borderColor: "border-purple-400",
@@ -40,20 +40,20 @@ const ResourcesSection: React.FC = () => {
       cardClass: "group"
     },
     {
-      title: "Varejo e E-commerce",
-      description: "Responda dúvidas, capture leads e impulsione vendas de forma automatizada via chat.",
-      idealFor: "Ideal para: lojas físicas, e-commerces, academias, lojas de tecnologia e produtos digitais.",
-      icon: ShoppingCart,
+      title: "Odontologia",
+      description: "Gerencie agendamentos odontológicos, lembretes de consultas e pré-atendimento automatizado.",
+      idealFor: "Ideal para: dentistas, clínicas odontológicas e ortodontistas.",
+      icon: Smile,
       color: "bg-blue-500",
       borderColor: "border-blue-400",
       highlightColor: "from-blue-400 to-blue-700",
       cardClass: "group"
     },
     {
-      title: "Imobiliárias e Serviços",
-      description: "Reduza a inadimplência com agentes de cobrança via WhatsApp, e-mail e SMS.",
-      idealFor: "Ideal para: imobiliárias, administradoras de condomínios e prestadores de serviço recorrente.",
-      icon: Home,
+      title: "Advocacia",
+      description: "Automatize agendamentos jurídicos, lembretes de prazos e gestão de clientes via IA.",
+      idealFor: "Ideal para: advogados, escritórios de advocacia e consultorias jurídicas.",
+      icon: Scale,
       color: "bg-amber-700",
       borderColor: "border-amber-600",
       highlightColor: "from-amber-600 to-amber-900",
